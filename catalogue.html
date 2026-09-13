@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Catalogue — FILIÈRE</title>
+<meta name="description" content="Les 12 packs de fournisseurs d'usines vérifiées, filtrables par niche et par prix.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/composants.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+
+<a class="sauter-au-contenu" href="#contenu">Aller au contenu</a>
+
+<header class="entete">
+  <div class="entete__annonce">
+    <div class="conteneur mono-s">
+      <span>Filière — registre des fabricants vérifiés</span>
+      <span class="pastille-signal">1 240 usines en base · vérifié 09.2026</span>
+      <span>FR / EN</span>
+    </div>
+  </div>
+  <div class="conteneur">
+    <div class="entete__barre">
+      <a class="logo" href="index.html" aria-label="Filière, accueil"><i class="logo__marque" aria-hidden="true"></i>FILIÈRE</a>
+      <nav class="nav" aria-label="Principal">
+        <a href="catalogue.html" aria-current="page">Catalogue</a>
+        <a href="index.html#methode">Protocole</a>
+        <a href="index.html#niches">Niches</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="design-system.html">Design&nbsp;system</a>
+      </nav>
+      <a class="btn" href="#grille-packs" data-curseur="lien"><span>Voir les 12 packs</span><span class="fleche" aria-hidden="true">↗</span></a>
+      <button class="entete__burger" aria-label="Ouvrir le menu" aria-expanded="false"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+
+<nav class="menu-mobile conteneur" aria-label="Menu mobile">
+  <a href="catalogue.html">Catalogue <span>01</span></a>
+  <a href="index.html#methode">Protocole <span>02</span></a>
+  <a href="index.html#niches">Niches <span>03</span></a>
+  <a href="index.html#faq">FAQ <span>04</span></a>
+  <a href="design-system.html">Design system <span>05</span></a>
+</nav>
+
+<main id="contenu">
+
+  <!-- ═══ TÊTE DE CATALOGUE ═══════════════════════════════════════ -->
+  <div class="conteneur" data-rev-immediat data-rev>
+    <div class="cat-tete">
+      <div>
+        <p class="num-section rev" style="--i:0;margin-bottom:var(--e-5)">Catalogue — 12 dossiers</p>
+        <h1 class="cat-tete__titre">
+          <span class="rev-masque"><span style="--i:0">Douze registres,</span></span>
+          <span class="rev-masque"><span style="--i:1"><em class="serif">huit niches.</em></span></span>
+        </h1>
+      </div>
+      <div class="rev" style="--i:2">
+        <label class="sr" for="champ-recherche">Rechercher un pack</label>
+        <div class="recherche">
+          <svg class="recherche__icone" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <circle cx="7" cy="7" r="5.25" stroke="currentColor" stroke-width="1.3"/>
+            <path d="M11 11L14.5 14.5" stroke="currentColor" stroke-width="1.3"/>
+          </svg>
+          <input class="recherche__champ" id="champ-recherche" type="search" placeholder="Cuir, Portugal, ISO 22716…" autocomplete="off">
+          <button class="recherche__effacer" id="effacer-recherche" type="button">Effacer</button>
+        </div>
+        <p class="mono-s" style="margin-top:var(--e-3)">Cherche dans le nom, la description, les pays et la niche.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ FILTRES ═════════════════════════════════════════════════ -->
+  <div class="filtres">
+    <div class="conteneur">
+      <button class="filtres__bouton-mobile" aria-expanded="false">
+        <span>Filtrer &amp; trier</span>
+        <span id="compteur-resultats-mobile" class="mono-s">12 packs</span>
+      </button>
+
+      <div class="filtres__corps">
+        <div class="filtres__ligne">
+          <span class="filtres__label">Niche</span>
+          <div class="filtres__groupe">
+            <button class="puce puce--sans-point" data-filtre-niche="toutes" aria-pressed="true">Toutes <span class="puce__n">12</span></button>
+            <button class="puce n-maroquinerie" data-filtre-niche="maroquinerie" aria-pressed="false">Maroquinerie <span class="puce__n">2</span></button>
+            <button class="puce n-bagagerie"    data-filtre-niche="bagagerie"    aria-pressed="false">Sacs &amp; bagagerie <span class="puce__n">1</span></button>
+            <button class="puce n-jouets"       data-filtre-niche="jouets"       aria-pressed="false">Jouets <span class="puce__n">1</span></button>
+            <button class="puce n-cosmetique"   data-filtre-niche="cosmetique"   aria-pressed="false">Cosmétique &amp; parfum <span class="puce__n">2</span></button>
+            <button class="puce n-textile"      data-filtre-niche="textile"      aria-pressed="false">Textile &amp; PAP <span class="puce__n">2</span></button>
+            <button class="puce n-bijouterie"   data-filtre-niche="bijouterie"   aria-pressed="false">Bijouterie <span class="puce__n">1</span></button>
+            <button class="puce n-mobilier"     data-filtre-niche="mobilier"     aria-pressed="false">Mobilier &amp; déco <span class="puce__n">2</span></button>
+            <button class="puce n-electronique" data-filtre-niche="electronique" aria-pressed="false">Électronique <span class="puce__n">1</span></button>
+          </div>
+        </div>
+
+        <div class="filtres__ligne">
+          <span class="filtres__label">Prix</span>
+          <div class="segment" role="group" aria-label="Filtrer par prix">
+            <button data-filtre-prix="tous" aria-pressed="true">Tous</button>
+            <button data-filtre-prix="p1"   aria-pressed="false">&lt; 150 €</button>
+            <button data-filtre-prix="p2"   aria-pressed="false">150 – 250 €</button>
+            <button data-filtre-prix="p3"   aria-pressed="false">250 € +</button>
+          </div>
+
+          <span class="filtres__label" style="min-width:auto;margin-left:var(--e-5)">Tri</span>
+          <div class="segment" role="group" aria-label="Trier">
+            <button data-tri="populaire" aria-pressed="true">Populaire</button>
+            <button data-tri="prix-asc"  aria-pressed="false">Prix ↑</button>
+            <button data-tri="prix-desc" aria-pressed="false">Prix ↓</button>
+            <button data-tri="usines"    aria-pressed="false">Nb d’usines</button>
+          </div>
+
+          <span class="filtres__resultat" id="compteur-resultats"><b>12</b> packs sur 12</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ GRILLE ══════════════════════════════════════════════════ -->
+  <div class="conteneur">
+    <div class="grille-packs grille-packs--4" id="grille-packs" data-decale=".carte"></div>
+
+    <div class="cat-vide" id="cat-vide" hidden>
+      <p>Aucun pack ne correspond à ces critères.</p>
+      <button class="btn btn--secondaire" onclick="location.href='catalogue.html'"><span>Réinitialiser les filtres</span></button>
+    </div>
+  </div>
+
+  <!-- ═══ L'INTÉGRALE ═════════════════════════════════════════════ -->
+  <section class="section" data-rev>
+    <div class="conteneur">
+      <div class="comparatif rev">
+        <div class="comparatif__col">
+          <div class="comparatif__tete">
+            <span class="comparatif__titre">L’intégrale</span>
+            <span class="mono-s">Dossier n°00</span>
+          </div>
+          <p class="chapo" style="margin-bottom:var(--e-5)">Les douze registres, les huit niches, <em class="serif signal">1 240 usines</em>, mis à jour en continu pendant vingt-quatre mois.</p>
+          <div class="hero__actions">
+            <a class="btn" href="#" data-curseur="lien"><span>Obtenir l’intégrale — 790 €</span><span class="fleche" aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="comparatif__col comparatif__col--apres">
+          <div class="comparatif__tete">
+            <span class="comparatif__titre">Ce que ça change</span>
+            <span class="mono-s signal">— 60 %</span>
+          </div>
+          <ul class="comparatif--apres">
+            <li><span class="marque">01</span><span>Les 12 packs achetés séparément</span><span class="duree">1 985 €</span></li>
+            <li><span class="marque">02</span><span>Prix de l’intégrale</span><span class="duree">790 €</span></li>
+            <li><span class="marque">03</span><span>Durée des mises à jour</span><span class="duree">24 mois</span></li>
+            <li><span class="marque">04</span><span>Nouvelles niches à venir</span><span class="duree">incluses</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pied">
+  <div class="conteneur">
+    <div class="pied__haut">
+      <div>
+        <p class="pied__titre">Filière</p>
+        <p class="corps" style="max-width:32ch">Le registre des fabricants vérifiés, constitué à la main, niche par niche, depuis 2024.</p>
+      </div>
+      <div>
+        <p class="pied__titre">Catalogue</p>
+        <div class="pied__liens">
+          <a href="catalogue.html?niche=maroquinerie">Maroquinerie</a>
+          <a href="catalogue.html?niche=textile">Textile &amp; PAP</a>
+          <a href="catalogue.html?niche=cosmetique">Cosmétique</a>
+          <a href="catalogue.html">Tous les packs</a>
+        </div>
+      </div>
+      <div>
+        <p class="pied__titre">Maison</p>
+        <div class="pied__liens">
+          <a href="index.html#methode">Protocole de vérification</a>
+          <a href="index.html#faq">Questions fréquentes</a>
+          <a href="design-system.html">Design system</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+      <div>
+        <p class="pied__titre">Une usine par semaine</p>
+        <p class="corps-s" style="margin-bottom:var(--e-4)">Un fabricant vérifié, envoyé chaque mardi. Sans commentaire inutile.</p>
+        <form class="infolettre" onsubmit="return false">
+          <label class="sr" for="courriel">Votre adresse e-mail</label>
+          <input id="courriel" type="email" placeholder="vous@marque.com" autocomplete="email">
+          <button type="submit">S’inscrire ↗</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="conteneur"><span class="pied__lettre" aria-hidden="true">Filière</span></div>
+
+  <div class="conteneur">
+    <div class="pied__bas">
+      <span>© <span data-annee>2026</span> Filière</span>
+      <span>Mentions légales · CGV · Confidentialité</span>
+      <span>Maquette — direction « Le Registre »</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ VUE DÉTAILLÉE D'UN PACK ═══════════════════════════════════ -->
+<div class="modale" id="modale-pack" role="dialog" aria-modal="true" aria-labelledby="titre-modale" aria-hidden="true">
+  <div class="modale__voile"></div>
+  <div class="modale__panneau"></div>
+</div>
+
+<script src="assets/js/donnees.js"></script>
+<script src="assets/js/site.js"></script>
+<script src="assets/js/catalogue.js"></script>
+</body>
+</html>

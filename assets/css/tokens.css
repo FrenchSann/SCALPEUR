@@ -1,0 +1,197 @@
+/* ═══════════════════════════════════════════════════════════════════
+   FILIÈRE — JETONS DE DESIGN
+   Direction « Le Registre ». Tout le système tient dans ce fichier.
+   Règle : aucune valeur brute ailleurs. Si un chiffre n'est pas ici,
+   c'est qu'il ne devrait pas exister.
+   ═══════════════════════════════════════════════════════════════════ */
+
+:root {
+
+  /* ── 1. COULEUR ──────────────────────────────────────────────────
+     Base neutre profonde + blanc cassé + UN accent. C'est tout.
+     Les couleurs de niche ne sont jamais des fonds : uniquement des
+     pastilles de 7px et des filets de 2px. Elles identifient, elles
+     ne décorent pas.                                                */
+
+  --nuit-900:#08090700;          /* réservé aux voiles                */
+  --nuit:#0C0D0B;                /* fond page                         */
+  --nuit-sur:#131510;            /* surface surélevée (marquee, modale)*/
+  --nuit-sur-2:#1B1E17;          /* surface pressée / champ actif     */
+
+  --craie:#E9E6DD;               /* texte principal + fond inversé    */
+  --craie-vif:#F5F3EC;           /* titres sur nuit, contraste max    */
+
+  --craie-70:rgba(233,230,221,.70);
+  --craie-55:rgba(233,230,221,.55);
+  --craie-35:rgba(233,230,221,.35);
+  --craie-20:rgba(233,230,221,.20);
+  --filet:rgba(233,230,221,.155);   /* LE filet. 1px. partout.        */
+  --filet-fort:rgba(233,230,221,.30);
+
+  --encre-70:rgba(12,13,11,.70);    /* texte sur fond craie           */
+  --encre-45:rgba(12,13,11,.45);
+  --filet-inv:rgba(12,13,11,.18);
+
+  --signal:#D8F24B;                 /* accent unique                  */
+  --signal-sombre:#B4CC2F;          /* survol de bouton signal        */
+  --signal-voile:rgba(216,242,75,.12);
+
+  /* Accents secondaires de niche — désaturés (S ≤ 55 %) pour ne
+     jamais concurrencer le signal. Contraste ≥ 4.5:1 sur --nuit.    */
+  --n-maroquinerie:#B4763C;
+  --n-bagagerie:#C2542F;
+  --n-jouets:#6FA8C7;
+  --n-cosmetique:#D97BA0;
+  --n-textile:#79B58C;
+  --n-bijouterie:#E0C060;
+  --n-mobilier:#C08A6A;
+  --n-electronique:#9B8FD1;
+
+  /* Sémantique — aucune couleur nouvelle, on réemploie. */
+  --ok:var(--n-textile);
+  --attention:var(--n-bijouterie);
+  --erreur:var(--n-bagagerie);
+
+
+  /* ── 2. TYPOGRAPHIE ──────────────────────────────────────────────
+     3 familles, 3 rôles stricts.
+     Archivo (variable wdth 62–125 / wght 300–900) : structure & voix.
+       → l'axe de chasse est un OUTIL GRAPHIQUE, pas un réglage.
+     Instrument Serif italique : l'accent, le mot mis en valeur.
+       → jamais plus d'un mot par titre, jamais en corps de texte.
+     IBM Plex Mono : la donnée. MOQ, délais, prix, références, labels.
+       → c'est ce qui rend le produit crédible.                      */
+
+  --f-grot:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+
+  /* Chasses nommées (font-variation-settings) */
+  --w-etroit:62;
+  --w-serre:80;
+  --w-normal:100;
+  --w-large:112;
+  --w-etendu:125;
+
+  /* Échelle display — non linéaire, fluide, calée sur 1440 → 390 */
+  --t-d1:clamp(3.05rem,  9.0vw, 8.25rem);   /*  48.8 → 132 px */
+  --t-d2:clamp(2.40rem,  5.6vw, 5.00rem);   /*  38.4 →  80 px */
+  --t-d3:clamp(1.85rem,  3.4vw, 3.00rem);   /*  29.6 →  48 px */
+
+  /* Échelle texte — base 16, ratio 1.25 (tierce majeure) */
+  --t-t1:2.00rem;    /* 32 — titre de carte détail   */
+  --t-t2:1.50rem;    /* 24 — titre de carte pack     */
+  --t-t3:1.1875rem;  /* 19 — sous-titre, question FAQ*/
+  --t-l:1.125rem;    /* 18 — chapô                   */
+  --t-m:1rem;        /* 16 — corps                   */
+  --t-s:0.875rem;    /* 14 — corps secondaire        */
+
+  /* Échelle mono — toujours en capitales sauf --t-mono-l */
+  --t-mono-l:0.8125rem;  /* 13   — données de tableau, bas de casse */
+  --t-mono-m:0.71875rem; /* 11.5 — labels, boutons, nav             */
+  --t-mono-s:0.65625rem; /* 10.5 — métadonnées, numéros de dossier  */
+
+  /* Interlignes */
+  --i-display:0.86;
+  --i-titre:1.04;
+  --i-serre:1.32;
+  --i-corps:1.62;
+
+  /* Approches */
+  --a-display:-0.035em;
+  --a-titre:-0.02em;
+  --a-corps:0;
+  --a-mono:0.14em;
+  --a-mono-large:0.18em;
+
+
+  /* ── 3. ESPACEMENT ───────────────────────────────────────────────
+     Base 4 px. On ne saute jamais un cran au hasard :
+     intérieur de composant ≤ 24, entre composants 32–64,
+     entre sections 96–160.                                          */
+
+  --e-1:0.25rem;   /*   4 */
+  --e-2:0.5rem;    /*   8 */
+  --e-3:0.75rem;   /*  12 */
+  --e-4:1rem;      /*  16 */
+  --e-5:1.5rem;    /*  24 */
+  --e-6:2rem;      /*  32 */
+  --e-7:3rem;      /*  48 */
+  --e-8:4rem;      /*  64 */
+  --e-9:6rem;      /*  96 */
+  --e-10:8rem;     /* 128 */
+  --e-11:10rem;    /* 160 */
+
+  /* ── 4. GRILLE ───────────────────────────────────────────────────
+     12 colonnes / gouttière 24 / marge 48 / conteneur 1440.
+     Mobile : 4 colonnes / gouttière 16 / marge 20.
+     La grille est VISIBLE : filets verticaux à 5,5 % d'opacité.     */
+
+  --conteneur:90rem;      /* 1440 */
+  --marge:3rem;           /*   48 */
+  --gouttiere:1.5rem;     /*   24 */
+  --colonnes:12;
+  --entete-h:4.75rem;     /*   76 */
+  --entete-h-compact:3.5rem; /* 56 — après scroll */
+
+
+  /* ── 5. RAYONS ───────────────────────────────────────────────────
+     Parti pris : ZÉRO. L'angle droit est la signature du registre.
+     Deux exceptions, et deux seulement.                             */
+
+  --r-0:0;
+  --r-champ:2px;      /* champs de saisie uniquement, pour l'affordance */
+  --r-rond:999px;     /* pastilles, points de niche, curseur            */
+
+
+  /* ── 6. RELIEF ───────────────────────────────────────────────────
+     Pas d'ombre portée. Le relief vient du filet 1px et de
+     l'inversion de fond. Trois valeurs tolérées.                    */
+
+  --o-aucune:none;
+  --o-contour:0 0 0 1px var(--filet);
+  --o-contour-signal:0 0 0 1px var(--signal);
+  --o-flottant:0 24px 48px -32px rgba(0,0,0,.9);  /* modale & tiroir mobile */
+  --voile:rgba(8,9,7,.78);
+
+
+  /* ── 7. MOUVEMENT ────────────────────────────────────────────────
+     5 durées, 3 courbes, 3 décalages. Rien d'autre.
+     Amplitude max : 24 px de translation, 1.03 d'échelle.
+     Le texte est lisible dès la première frame : on anime le masque
+     et la chasse, jamais la couleur du texte.                       */
+
+  --d-micro:160ms;    /* focus, pression                  */
+  --d-etat:260ms;     /* survol, inversion de carte       */
+  --d-composant:420ms;/* accordéon, filtre, modale        */
+  --d-reveal:720ms;   /* révélation de titre              */
+  --d-sequence:900ms; /* ouverture de hero                */
+  --d-marquee:34s;    /* bandeau défilant                 */
+
+  --c-entree:cubic-bezier(.16,1,.3,1);   /* expo out — tout ce qui arrive */
+  --c-sortie:cubic-bezier(.55,0,1,.45);  /* tout ce qui part             */
+  --c-doux:cubic-bezier(.65,0,.35,1);    /* aller-retour, survol         */
+
+  --dec-bloc:60ms;    /* entre deux éléments d'un bloc */
+  --dec-ligne:90ms;   /* entre deux lignes de titre    */
+  --dec-lettre:35ms;  /* entre deux lettres            */
+}
+
+/* Mobile — on resserre la grille, jamais la typo (déjà fluide). */
+@media (max-width:47.9375rem){
+  :root{
+    --marge:1.25rem;      /* 20 */
+    --gouttiere:1rem;     /* 16 */
+    --colonnes:4;
+    --entete-h:3.75rem;   /* 60 */
+  }
+}
+
+/* Accessibilité : une seule règle, appliquée partout. */
+@media (prefers-reduced-motion:reduce){
+  :root{
+    --d-micro:1ms; --d-etat:1ms; --d-composant:1ms;
+    --d-reveal:200ms; --d-sequence:200ms;
+    --dec-bloc:0ms; --dec-ligne:0ms; --dec-lettre:0ms;
+  }
+}

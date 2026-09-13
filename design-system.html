@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Design system — FILIÈRE</title>
+<meta name="description" content="Jetons, échelles et composants de la direction « Le Registre ».">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/composants.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+
+<a class="sauter-au-contenu" href="#contenu">Aller au contenu</a>
+
+<header class="entete">
+  <div class="entete__annonce">
+    <div class="conteneur mono-s">
+      <span>Filière — design system</span>
+      <span class="pastille-signal">Direction « Le Registre » · v1.0</span>
+      <span>FR / EN</span>
+    </div>
+  </div>
+  <div class="conteneur">
+    <div class="entete__barre">
+      <a class="logo" href="index.html" aria-label="Filière, accueil"><i class="logo__marque" aria-hidden="true"></i>FILIÈRE</a>
+      <nav class="nav" aria-label="Principal">
+        <a href="catalogue.html">Catalogue</a>
+        <a href="index.html#methode">Protocole</a>
+        <a href="index.html#niches">Niches</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="design-system.html" aria-current="page">Design&nbsp;system</a>
+      </nav>
+      <a class="btn" href="index.html" data-curseur="lien"><span>Voir le site</span><span class="fleche" aria-hidden="true">↗</span></a>
+      <button class="entete__burger" aria-label="Ouvrir le menu" aria-expanded="false"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+
+<nav class="menu-mobile conteneur" aria-label="Menu mobile">
+  <a href="index.html">Accueil <span>01</span></a>
+  <a href="catalogue.html">Catalogue <span>02</span></a>
+  <a href="design-system.html">Design system <span>03</span></a>
+</nav>
+
+<main id="contenu" class="conteneur">
+
+  <div class="cat-tete">
+    <div>
+      <p class="num-section" style="margin-bottom:var(--e-5)">Design system — v1.0</p>
+      <h1 class="cat-tete__titre">Le <em class="serif">registre</em><br>des composants.</h1>
+    </div>
+    <p class="corps">Tous les jetons vivent dans <code class="mono-l" style="color:var(--signal)">tokens.css</code>. Aucune valeur n’est écrite en dur ailleurs&nbsp;: une couleur, une taille ou une durée qui ne figure pas ici n’a pas le droit d’exister dans le produit.</p>
+  </div>
+
+  <!-- ═══ 1. COULEUR ════════════════════════════════════════════ -->
+  <section class="ds-section" data-rev>
+    <div class="titre-section">
+      <span class="num-section">01 — Couleur</span>
+      <span class="mono-s">Base profonde · blanc cassé · un accent</span>
+    </div>
+    <p class="corps" style="margin-bottom:var(--e-6)">Trois valeurs portent 95&nbsp;% de l’interface. L’accent <b class="signal">signal</b> ne sert qu’à trois choses&nbsp;: l’action principale, l’état actif, et le mot mis en valeur. Jamais pour décorer.</p>
+
+    <div class="ds-grille">
+      <div class="jeton"><div class="jeton__pave" style="background:#0C0D0B"></div><span class="jeton__nom">Nuit</span><span class="jeton__val">#0C0D0B · fond de page</span></div>
+      <div class="jeton"><div class="jeton__pave" style="background:#131510"></div><span class="jeton__nom">Nuit surface</span><span class="jeton__val">#131510 · bandeau, modale</span></div>
+      <div class="jeton"><div class="jeton__pave" style="background:#1B1E17"></div><span class="jeton__nom">Nuit pressée</span><span class="jeton__val">#1B1E17 · champ actif</span></div>
+      <div class="jeton"><div class="jeton__pave" style="background:#E9E6DD"></div><span class="jeton__nom">Craie</span><span class="jeton__val">#E9E6DD · texte, inversion</span></div>
+      <div class="jeton"><div class="jeton__pave" style="background:#F5F3EC"></div><span class="jeton__nom">Craie vive</span><span class="jeton__val">#F5F3EC · titres</span></div>
+      <div class="jeton"><div class="jeton__pave" style="background:#D8F24B"></div><span class="jeton__nom">Signal</span><span class="jeton__val">#D8F24B · accent unique</span></div>
+      <div class="jeton"><div class="jeton__pave" style="background:#B4CC2F"></div><span class="jeton__nom">Signal sombre</span><span class="jeton__val">#B4CC2F · survol</span></div>
+      <div class="jeton"><div class="jeton__pave" style="background:rgba(233,230,221,.155)"></div><span class="jeton__nom">Filet</span><span class="jeton__val">craie 15,5 % · 1px partout</span></div>
+    </div>
+
+    <h3 class="t3" style="margin:var(--e-7) 0 var(--e-4)">Accents secondaires de niche</h3>
+    <p class="corps" style="margin-bottom:var(--e-5)">Huit teintes désaturées (S&nbsp;≤&nbsp;55&nbsp;%) pour que le catalogue respire la variété sans concurrencer le signal. Elles n’apparaissent qu’en pastille de 7&nbsp;px et en filet de 2&nbsp;px&nbsp;: jamais en aplat, jamais en texte.</p>
+    <div class="ds-grille">
+      <div class="jeton"><div class="jeton__pave" style="background:#B4763C"></div><span class="jeton__nom">01 Maroquinerie</span><span class="jeton__val">#B4763C</span></div>
+      <div class="jeton"><div class="jeton__pave" style="background:#C2542F"></div><span class="jeton__nom">02 Bagagerie</span><span class="jeton__val">#C2542F</span></div>
+      <div class="jeton"><div class="jeton__pave" style="background:#6FA8C7"></div><span class="jeton__nom">03 Jouets</span><span class="jeton__val">#6FA8C7</span></div>
+      <div class="jeton"><div class="jeton__pave" style="background:#D97BA0"></div><span class="jeton__nom">04 Cosmétique</span><span class="jeton__val">#D97BA0</span></div>
+      <div class="jeton"><div class="jeton__pave" style="background:#79B58C"></div><span class="jeton__nom">05 Textile</span><span class="jeton__val">#79B58C</span></div>
+      <div class="jeton"><div class="jeton__pave" style="background:#E0C060"></div><span class="jeton__nom">06 Bijouterie</span><span class="jeton__val">#E0C060</span></div>
+      <div class="jeton"><div class="jeton__pave" style="background:#C08A6A"></div><span class="jeton__nom">07 Mobilier</span><span class="jeton__val">#C08A6A</span></div>
+      <div class="jeton"><div class="jeton__pave" style="background:#9B8FD1"></div><span class="jeton__nom">08 Électronique</span><span class="jeton__val">#9B8FD1</span></div>
+    </div>
+  </section>
+
+  <!-- ═══ 2. TYPOGRAPHIE ════════════════════════════════════════ -->
+  <section class="ds-section" data-rev>
+    <div class="titre-section">
+      <span class="num-section">02 — Typographie</span>
+      <span class="mono-s">Archivo · Instrument Serif · IBM Plex Mono</span>
+    </div>
+    <p class="corps" style="margin-bottom:var(--e-6)">Trois familles, trois rôles stricts. <b style="color:var(--craie)">Archivo</b> (variable, chasse 62→125) porte la structure et la voix&nbsp;: son axe de chasse est un outil graphique, pas un réglage. <b style="color:var(--craie)">Instrument Serif</b> italique est l’accent&nbsp;— un mot par titre, jamais en corps de texte. <b style="color:var(--craie)">IBM Plex Mono</b> porte la donnée&nbsp;: c’est elle qui rend le produit crédible.</p>
+
+    <div class="ds-echelle">
+      <div><span class="ds-legende">display-1 · 132/0.86</span><span class="d1" style="font-size:4rem">Trouvez <em class="serif">l’usine</em></span></div>
+      <div><span class="ds-legende">display-2 · 80/0.86</span><span class="d2">Ouvrez le registre</span></div>
+      <div><span class="ds-legende">display-3 · 48/0.86</span><span class="d3">Douze registres</span></div>
+      <div><span class="ds-legende">titre-1 · 32/1.04</span><span class="t1">Cuir pleine fleur</span></div>
+      <div><span class="ds-legende">titre-2 · 24/1.04</span><span class="t2">Carte de pack</span></div>
+      <div><span class="ds-legende">titre-3 · 19/1.32</span><span class="t3">Question fréquente</span></div>
+      <div><span class="ds-legende">chapô · 18/1.55</span><span class="chapo">Contacts directs, MOQ réels, délais constatés.</span></div>
+      <div><span class="ds-legende">corps · 16/1.62</span><span class="corps">Chaque fiche est constituée à la main, une par une.</span></div>
+      <div><span class="ds-legende">corps-s · 14/1.6</span><span class="corps-s">Note secondaire, légende, description de carte.</span></div>
+      <div><span class="ds-legende">mono-l · 13</span><span class="mono-l">Conceria M— · Santa Croce sull’Arno, IT · 50 peaux</span></div>
+      <div><span class="ds-legende">mono-m · 11.5 / .14em</span><span class="mono">Ouvrir le pack</span></div>
+      <div><span class="ds-legende">mono-s · 10.5 / .18em</span><span class="mono-s">Dossier n°07 — mis à jour 09.2026</span></div>
+    </div>
+
+    <h3 class="t3" style="margin:var(--e-7) 0 var(--e-4)">La chasse comme outil</h3>
+    <p class="corps" style="margin-bottom:var(--e-5)">Le même mot, à trois chasses. C’est la signature typographique de la marque&nbsp;: un mot condensé au milieu d’un titre étendu crée le contraste sans changer ni la couleur ni la taille.</p>
+    <div class="ds-echelle">
+      <div><span class="ds-legende">wdth 62 — étroit</span><span class="d3 etroit">Registre</span></div>
+      <div><span class="ds-legende">wdth 100 — normal</span><span class="d3">Registre</span></div>
+      <div><span class="ds-legende">wdth 125 — étendu</span><span class="d3 etendu">Registre</span></div>
+    </div>
+  </section>
+
+  <!-- ═══ 3. ESPACEMENT, GRILLE, RAYONS, RELIEF ═════════════════ -->
+  <section class="ds-section" data-rev>
+    <div class="titre-section">
+      <span class="num-section">03 — Espace &amp; matière</span>
+      <span class="mono-s">Base 4 px · grille 12 col · rayon 0</span>
+    </div>
+
+    <div class="ds-echelle">
+      <div><span class="ds-legende">e-1 · 4 px</span><span class="ds-barre" style="width:4px;--h:1.5rem"></span></div>
+      <div><span class="ds-legende">e-2 · 8 px</span><span class="ds-barre" style="width:8px;--h:1.5rem"></span></div>
+      <div><span class="ds-legende">e-3 · 12 px</span><span class="ds-barre" style="width:12px;--h:1.5rem"></span></div>
+      <div><span class="ds-legende">e-4 · 16 px</span><span class="ds-barre" style="width:16px;--h:1.5rem"></span></div>
+      <div><span class="ds-legende">e-5 · 24 px — intérieur de composant</span><span class="ds-barre" style="width:24px;--h:1.5rem"></span></div>
+      <div><span class="ds-legende">e-6 · 32 px</span><span class="ds-barre" style="width:32px;--h:1.5rem"></span></div>
+      <div><span class="ds-legende">e-7 · 48 px — marge de page</span><span class="ds-barre" style="width:48px;--h:1.5rem"></span></div>
+      <div><span class="ds-legende">e-8 · 64 px</span><span class="ds-barre" style="width:64px;--h:1.5rem"></span></div>
+      <div><span class="ds-legende">e-9 · 96 px — entre sections</span><span class="ds-barre" style="width:96px;--h:1.5rem"></span></div>
+      <div><span class="ds-legende">e-10 · 128 px</span><span class="ds-barre" style="width:128px;--h:1.5rem"></span></div>
+      <div><span class="ds-legende">e-11 · 160 px</span><span class="ds-barre" style="width:160px;--h:1.5rem"></span></div>
+    </div>
+
+    <div class="ds-rangee"><span class="ds-legende">Grille desktop</span><span class="corps-s">12 colonnes · gouttière 24 · marge 48 · conteneur 1440. Filets verticaux visibles à 5,5&nbsp;% d’opacité.</span></div>
+    <div class="ds-rangee"><span class="ds-legende">Grille mobile</span><span class="corps-s">4 colonnes · gouttière 16 · marge 20. Les cartes passent en pleine largeur, les filets restent.</span></div>
+    <div class="ds-rangee"><span class="ds-legende">Rayons</span><span class="corps-s"><b style="color:var(--craie)">0 partout.</b> Deux exceptions&nbsp;: 2&nbsp;px sur les champs de saisie (affordance), 999&nbsp;px sur les pastilles de niche et le curseur.</span></div>
+    <div class="ds-rangee"><span class="ds-legende">Relief</span><span class="corps-s"><b style="color:var(--craie)">Aucune ombre portée.</b> Le relief vient du filet de 1&nbsp;px et de l’inversion de fond. Seules la modale et le tiroir mobile portent <code class="mono-l">0 24px 48px -32px rgba(0,0,0,.9)</code>.</span></div>
+    <div class="ds-rangee"><span class="ds-legende">Texture</span><span class="corps-s">Grain SVG <code class="mono-l">feTurbulence</code>, 28&nbsp;% d’opacité, en <code class="mono-l">overlay</code>, fixé au viewport. Jamais de dégradé coloré.</span></div>
+  </section>
+
+  <!-- ═══ 4. MOUVEMENT ══════════════════════════════════════════ -->
+  <section class="ds-section" data-rev>
+    <div class="titre-section">
+      <span class="num-section">04 — Mouvement</span>
+      <span class="mono-s">5 durées · 3 courbes · 3 décalages</span>
+    </div>
+    <p class="corps" style="margin-bottom:var(--e-6)">Amplitude maximale&nbsp;: 24&nbsp;px de translation, 1,03 d’échelle. Le texte est lisible dès la première frame&nbsp;— on anime le masque, la chasse et la position, jamais la couleur du texte. Rien ne clignote, rien ne retarde la lecture.</p>
+
+    <div class="ds-rangee"><span class="ds-legende">d-micro · 160 ms</span><span class="corps-s">Focus, pression, bascule d’un filtre.</span></div>
+    <div class="ds-rangee"><span class="ds-legende">d-etat · 260 ms</span><span class="corps-s">Survol, inversion de carte, balayage de bouton.</span></div>
+    <div class="ds-rangee"><span class="ds-legende">d-composant · 420 ms</span><span class="corps-s">Accordéon, tiroir de filtres, panneau de détail.</span></div>
+    <div class="ds-rangee"><span class="ds-legende">d-reveal · 720 ms</span><span class="corps-s">Révélation d’un titre par masque.</span></div>
+    <div class="ds-rangee"><span class="ds-legende">d-marquee · 34 s</span><span class="corps-s">Un tour complet de bandeau. Pause au survol.</span></div>
+    <div class="ds-rangee"><span class="ds-legende">c-entree</span><span class="corps-s"><code class="mono-l">cubic-bezier(.16,1,.3,1)</code> — tout ce qui arrive.</span></div>
+    <div class="ds-rangee"><span class="ds-legende">c-sortie</span><span class="corps-s"><code class="mono-l">cubic-bezier(.55,0,1,.45)</code> — tout ce qui part.</span></div>
+    <div class="ds-rangee"><span class="ds-legende">c-doux</span><span class="corps-s"><code class="mono-l">cubic-bezier(.65,0,.35,1)</code> — aller-retour de survol.</span></div>
+    <div class="ds-rangee"><span class="ds-legende">Décalages</span><span class="corps-s">60&nbsp;ms entre blocs · 90&nbsp;ms entre lignes de titre · 35&nbsp;ms entre lettres.</span></div>
+    <div class="ds-rangee"><span class="ds-legende">Mouvement réduit</span><span class="corps-s">Toutes les durées tombent à 1&nbsp;ms, les révélations à 200&nbsp;ms d’opacité seule, le bandeau se fige, le curseur disparaît.</span></div>
+  </section>
+
+  <!-- ═══ 5. COMPOSANTS ═════════════════════════════════════════ -->
+  <section class="ds-section" data-rev>
+    <div class="titre-section">
+      <span class="num-section">05 — Composants</span>
+      <span class="mono-s">Huit blocs, tous les états</span>
+    </div>
+
+    <h3 class="t3" style="margin-bottom:var(--e-4)">Boutons</h3>
+    <div class="ds-rangee">
+      <span class="ds-legende">Primaire / secondaire</span>
+      <a class="btn" href="#" data-curseur="lien"><span>Obtenir ce pack</span><span class="fleche" aria-hidden="true">↗</span></a>
+      <a class="btn btn--secondaire" href="#" data-curseur="lien"><span>Comment on vérifie</span></a>
+      <a class="btn btn--fantome" href="#" data-curseur="lien"><span>Voir les 12 packs</span><span class="fleche" aria-hidden="true">↗</span></a>
+      <button class="btn" disabled><span>Indisponible</span></button>
+    </div>
+    <p class="corps-s" style="padding-bottom:var(--e-5)">Au survol, un volet craie balaye le bouton de gauche à droite en 260&nbsp;ms et le texte passe en nuit. La flèche avance de 4&nbsp;px en diagonale. Aucun changement de taille, aucune ombre.</p>
+
+    <h3 class="t3" style="margin:var(--e-6) 0 var(--e-4)">Badges de niche</h3>
+    <div class="ds-rangee">
+      <span class="ds-legende">3 variantes</span>
+      <span class="badge n-textile">05 / Textile &amp; PAP</span>
+      <span class="badge badge--cadre n-cosmetique">04 / Cosmétique</span>
+      <span class="badge badge--barre n-maroquinerie">01 / Maroquinerie</span>
+      <span class="ruban">Le plus vendu</span>
+    </div>
+
+    <h3 class="t3" style="margin:var(--e-6) 0 var(--e-4)">Champ de recherche</h3>
+    <div style="max-width:26rem;padding-bottom:var(--e-5)">
+      <div class="recherche">
+        <svg class="recherche__icone" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="5.25" stroke="currentColor" stroke-width="1.3"/><path d="M11 11L14.5 14.5" stroke="currentColor" stroke-width="1.3"/></svg>
+        <label class="sr" for="ds-recherche">Rechercher</label>
+        <input class="recherche__champ" id="ds-recherche" type="search" placeholder="Cuir, Portugal, ISO 22716…">
+        <button class="recherche__effacer" data-actif type="button">Effacer</button>
+      </div>
+      <p class="corps-s" style="margin-top:var(--e-3)">Un filet bas, pas une boîte. Au focus, un second filet signal se dessine de gauche à droite en 260&nbsp;ms et l’icône passe en signal.</p>
+    </div>
+
+    <h3 class="t3" style="margin:var(--e-6) 0 var(--e-4)">Filtres</h3>
+    <div class="ds-rangee">
+      <span class="ds-legende">Puces de niche</span>
+      <button class="puce puce--sans-point" aria-pressed="true">Toutes <span class="puce__n">12</span></button>
+      <button class="puce n-textile" aria-pressed="false">Textile &amp; PAP <span class="puce__n">2</span></button>
+      <button class="puce n-bijouterie" aria-pressed="true">Bijouterie <span class="puce__n">1</span></button>
+    </div>
+    <div class="ds-rangee">
+      <span class="ds-legende">Segment de prix</span>
+      <div class="segment" role="group" aria-label="Exemple">
+        <button aria-pressed="false">Tous</button>
+        <button aria-pressed="true">&lt; 150 €</button>
+        <button aria-pressed="false">150 – 250 €</button>
+        <button aria-pressed="false">250 € +</button>
+      </div>
+    </div>
+    <p class="corps-s" style="padding-bottom:var(--e-5)">Pas de pilule arrondie, pas de <code class="mono-l">select</code> stylé. L’état actif s’obtient par inversion&nbsp;: craie sur nuit pour les niches, signal sur nuit pour le prix. La pastille de couleur grossit de 40&nbsp;% au survol.</p>
+
+    <h3 class="t3" style="margin:var(--e-6) 0 var(--e-4)">Carte de pack</h3>
+    <p class="corps" style="margin-bottom:var(--e-5)">Survolez&nbsp;: la carte s’inverse par un balayage vertical de 260&nbsp;ms, un filet de 2&nbsp;px à la couleur de la niche se dessine en tête, le CTA prend un fond signal. Le contenu ne bouge pas d’un pixel.</p>
+    <div class="grille-packs" style="margin-bottom:var(--e-6)">
+      <a class="carte n-textile" href="catalogue.html#pack=tex-01" data-curseur="ouvrir">
+        <span class="carte__tete"><span class="badge n-textile">07 / Textile &amp; PAP</span><span class="ruban">Le plus vendu</span><span>88 usines</span></span>
+        <span class="carte__titre">Prêt-à-porter <em class="serif">petite série</em></span>
+        <span class="carte__desc">Portugal, Tunisie, Turquie. Jersey, maille, denim.</span>
+        <span class="carte__specs"><span class="carte__spec">MOQ <b>30 pcs</b></span><span class="carte__spec">Délai <b>30–60 j</b></span></span>
+        <span class="carte__pied"><span class="carte__prix">150 €</span><span class="carte__cta">Ouvrir le pack <i class="carte__fleche">↗</i></span></span>
+      </a>
+      <a class="carte n-bijouterie" href="catalogue.html#pack=bij-01" data-curseur="ouvrir">
+        <span class="carte__tete"><span class="badge n-bijouterie">09 / Bijouterie</span><span>44 usines</span></span>
+        <span class="carte__titre">Argent 925 &amp; <em class="serif">plaqué or</em></span>
+        <span class="carte__desc">Fonderies et ateliers avec poinçon vérifié.</span>
+        <span class="carte__specs"><span class="carte__spec">MOQ <b>50 pcs</b></span><span class="carte__spec">Délai <b>35–70 j</b></span></span>
+        <span class="carte__pied"><span class="carte__prix">210 €</span><span class="carte__cta">Ouvrir le pack <i class="carte__fleche">↗</i></span></span>
+      </a>
+      <a class="carte n-electronique" href="catalogue.html#pack=ele-01" data-curseur="ouvrir">
+        <span class="carte__tete"><span class="badge n-electronique">12 / Électronique</span><span>33 usines</span></span>
+        <span class="carte__titre">Accessoires &amp; <em class="serif">petite électronique</em></span>
+        <span class="carte__desc">ODM et EMS, CE/FCC, MOQ réalistes.</span>
+        <span class="carte__specs"><span class="carte__spec">MOQ <b>500 pcs</b></span><span class="carte__spec">Délai <b>70–120 j</b></span></span>
+        <span class="carte__pied"><span class="carte__prix">300 €</span><span class="carte__cta">Ouvrir le pack <i class="carte__fleche">↗</i></span></span>
+      </a>
+    </div>
+
+    <h3 class="t3" style="margin:var(--e-6) 0 var(--e-4)">Accordéon</h3>
+    <div class="faq" style="margin-bottom:var(--e-6)">
+      <div class="faq__item" data-ouvert>
+        <button class="faq__tete" aria-expanded="true"><span class="faq__num">01</span><span class="faq__q">État ouvert&nbsp;: le «&nbsp;+&nbsp;» a tourné de 135°</span><span class="faq__signe" aria-hidden="true"></span></button>
+        <div class="faq__corps"><div><p class="faq__r">Le dépli passe par <code class="mono-l">grid-template-rows: 0fr → 1fr</code> en 420&nbsp;ms&nbsp;: aucune hauteur calculée en JavaScript, donc aucun saut si le contenu change. La réponse monte de 8&nbsp;px avec 80&nbsp;ms de retard sur l’ouverture.</p></div></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__tete" aria-expanded="false"><span class="faq__num">02</span><span class="faq__q">État fermé&nbsp;: au survol, la question glisse de 6&nbsp;px</span><span class="faq__signe" aria-hidden="true"></span></button>
+        <div class="faq__corps"><div><p class="faq__r">Un seul panneau ouvert à la fois.</p></div></div>
+      </div>
+    </div>
+
+    <h3 class="t3" style="margin:var(--e-6) 0 var(--e-4)">En-tête &amp; pied de page</h3>
+    <p class="corps">L’en-tête est collant. Au-delà de 24&nbsp;px de défilement, la barre d’annonce se replie à zéro, le logotype passe de 23 à 20&nbsp;px et un filet apparaît sous la barre&nbsp;— le tout en 420&nbsp;ms. Le pied de page porte le logotype en chasse 125, coupé par le bord bas à 10&nbsp;% d’opacité&nbsp;: c’est la signature de fin de page. Les deux sont visibles sur cette page même.</p>
+  </section>
+
+  <!-- ═══ 6. ACCESSIBILITÉ ══════════════════════════════════════ -->
+  <section class="ds-section" data-rev>
+    <div class="titre-section">
+      <span class="num-section">06 — Accessibilité</span>
+    </div>
+    <div class="ds-rangee"><span class="ds-legende">Contrastes</span><span class="corps-s">Craie sur nuit&nbsp;: 14,8:1. Signal sur nuit&nbsp;: 13,9:1. Nuit sur signal&nbsp;: 13,9:1. Les textes secondaires ne descendent jamais sous 4,5:1.</span></div>
+    <div class="ds-rangee"><span class="ds-legende">Focus</span><span class="corps-s">Contour signal de 2&nbsp;px, décalé de 3&nbsp;px, sur tout élément interactif. Jamais supprimé.</span></div>
+    <div class="ds-rangee"><span class="ds-legende">Cibles</span><span class="corps-s">44&nbsp;px de hauteur minimale pour toute cible tactile sur mobile.</span></div>
+    <div class="ds-rangee"><span class="ds-legende">Sans JavaScript</span><span class="corps-s">La classe <code class="mono-l">js</code> conditionne tout masquage initial&nbsp;: sans script, la page reste entièrement lisible.</span></div>
+    <div class="ds-rangee"><span class="ds-legende">Curseur</span><span class="corps-s">Désactivé sur pointeur grossier et en mouvement réduit. Il ne remplace jamais un état visible&nbsp;: la carte s’inverse aussi sans lui.</span></div>
+  </section>
+
+</main>
+
+<footer class="pied">
+  <div class="conteneur">
+    <div class="pied__haut">
+      <div>
+        <p class="pied__titre">Filière</p>
+        <p class="corps" style="max-width:32ch">Direction artistique «&nbsp;Le Registre&nbsp;». Maquette complète, HTML/CSS/JS, sans dépendance.</p>
+      </div>
+      <div>
+        <p class="pied__titre">Pages</p>
+        <div class="pied__liens">
+          <a href="index.html">Accueil</a>
+          <a href="catalogue.html">Catalogue</a>
+          <a href="design-system.html">Design system</a>
+        </div>
+      </div>
+      <div>
+        <p class="pied__titre">Fichiers</p>
+        <div class="pied__liens">
+          <a href="assets/css/tokens.css">tokens.css</a>
+          <a href="assets/css/composants.css">composants.css</a>
+          <a href="DA.md">DA.md</a>
+        </div>
+      </div>
+      <div>
+        <p class="pied__titre">Polices</p>
+        <p class="corps-s">Archivo · Instrument Serif · IBM Plex Mono — toutes sous licence SIL Open Font.</p>
+      </div>
+    </div>
+  </div>
+  <div class="conteneur"><span class="pied__lettre" aria-hidden="true">Filière</span></div>
+  <div class="conteneur">
+    <div class="pied__bas">
+      <span>© <span data-annee>2026</span> Filière</span>
+      <span>Design system v1.0</span>
+      <span>Maquette — direction « Le Registre »</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>

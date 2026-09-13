@@ -1,0 +1,121 @@
+/* ═══════════════════════════════════════════════════════════════════
+   FILIÈRE — MISES EN PAGE
+   Ce qui n'appartient qu'à une page : le hero, l'index de niches,
+   la tête de catalogue.
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── HERO ─────────────────────────────────────────────────────────
+   Deux blocs séparés par un filet vertical : la voix à gauche,
+   le registre des niches à droite. Le déséquilibre 1fr / 372px est
+   volontaire : la donnée occupe une colonne fixe, comme dans un
+   tableau. */
+
+.hero{
+  display:grid;grid-template-columns:minmax(0,1fr) 23.25rem;
+  border-bottom:1px solid var(--filet);
+}
+@media (max-width:63.9375rem){.hero{grid-template-columns:1fr}}
+
+.hero__voix{
+  padding:var(--e-8) var(--marge) var(--e-6);
+  border-right:1px solid var(--filet);position:relative;
+}
+@media (max-width:63.9375rem){
+  .hero__voix{border-right:0;border-bottom:1px solid var(--filet);padding-block:var(--e-7) var(--e-6)}
+}
+@media (max-width:47.9375rem){.hero__voix{padding-block:var(--e-6) var(--e-5)}}
+
+.hero__ref{
+  display:flex;gap:var(--e-5);flex-wrap:wrap;margin-bottom:var(--e-7);
+  font-family:var(--f-mono);font-size:var(--t-mono-s);
+  letter-spacing:var(--a-mono-large);text-transform:uppercase;color:var(--craie-35);
+}
+.hero__ref b{color:var(--signal);font-weight:500}
+
+.hero__titre{
+  font-size:var(--t-d1);line-height:var(--i-display);letter-spacing:var(--a-display);
+  text-transform:uppercase;color:var(--craie-vif);
+}
+.hero__titre .l2{display:block;padding-left:.9em}
+@media (max-width:47.9375rem){.hero__titre .l2{padding-left:.4em}}
+.hero__titre .serif{color:var(--signal);text-transform:none}
+
+.hero__bas{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--e-8);
+  align-items:start;margin-top:var(--e-7);padding-top:var(--e-5);
+  border-top:1px solid var(--filet);
+}
+@media (max-width:63.9375rem){.hero__bas{grid-template-columns:1fr;gap:var(--e-5)}}
+.hero__actions{display:flex;gap:var(--e-3);flex-wrap:wrap}
+
+/* Index des niches — le registre */
+.index{padding-top:var(--e-5)}
+.index__tete{
+  display:flex;justify-content:space-between;gap:var(--e-4);
+  padding:0 var(--marge) var(--e-3) var(--e-5);
+  font-family:var(--f-mono);font-size:var(--t-mono-s);
+  letter-spacing:var(--a-mono-large);text-transform:uppercase;color:var(--craie-35);
+  border-bottom:1px solid var(--filet);
+}
+.index__ligne{
+  display:grid;grid-template-columns:2.125rem 1fr auto;gap:var(--e-3);align-items:center;
+  width:100%;text-align:left;
+  padding:0.84375rem var(--marge) 0.84375rem var(--e-5);
+  border-bottom:1px solid var(--filet);
+  font-family:var(--f-mono);color:var(--craie-55);
+  position:relative;isolation:isolate;
+  transition:color var(--d-etat) var(--c-doux);
+}
+.index__ligne::after{
+  content:"";position:absolute;inset:0;z-index:-1;background:var(--signal);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform var(--d-etat) var(--c-doux);
+}
+.index__ligne:hover,.index__ligne[aria-current]{color:var(--nuit)}
+.index__ligne:hover::after,.index__ligne[aria-current]::after{transform:scaleX(1)}
+.index__num{font-size:var(--t-mono-s);letter-spacing:var(--a-mono);color:var(--craie-35);transition:color var(--d-etat) var(--c-doux)}
+.index__ligne:hover .index__num,.index__ligne[aria-current] .index__num{color:var(--encre-45)}
+.index__nom{
+  display:flex;align-items:center;gap:var(--e-3);
+  font-size:var(--t-mono-m);letter-spacing:.09em;text-transform:uppercase;
+}
+.index__nb{font-size:var(--t-mono-s);letter-spacing:var(--a-mono);color:var(--craie-35);transition:color var(--d-etat) var(--c-doux)}
+.index__ligne:hover .index__nb,.index__ligne[aria-current] .index__nb{color:var(--encre-45)}
+@media (max-width:63.9375rem){
+  .index{padding-top:0}
+  .index__tete{padding-inline:var(--marge)}
+  .index__ligne{padding-inline:var(--marge)}
+}
+
+/* ── TÊTE DE CATALOGUE ────────────────────────────────────────── */
+.cat-tete{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,26rem);
+  gap:var(--e-8);align-items:end;padding-block:var(--e-8) var(--e-6);
+}
+@media (max-width:63.9375rem){.cat-tete{grid-template-columns:1fr;gap:var(--e-5);padding-block:var(--e-7) var(--e-5)}}
+.cat-tete__titre{
+  font-size:var(--t-d2);line-height:var(--i-display);letter-spacing:var(--a-display);
+  text-transform:uppercase;color:var(--craie-vif);
+}
+.cat-tete__titre .serif{color:var(--signal);text-transform:none}
+
+.cat-vide{
+  padding:var(--e-9) 0;text-align:center;border-bottom:1px solid var(--filet);
+}
+.cat-vide p{font-family:var(--f-mono);font-size:var(--t-mono-m);letter-spacing:var(--a-mono);text-transform:uppercase;color:var(--craie-35);margin-bottom:var(--e-5)}
+
+/* Carte de pack en mode catalogue : on ajoute la ligne de specs. */
+.carte[hidden]{display:none}
+
+/* ── PAGE DESIGN SYSTEM ───────────────────────────────────────── */
+.ds-section{padding-block:var(--e-8);border-top:1px solid var(--filet)}
+.ds-grille{display:grid;grid-template-columns:repeat(auto-fill,minmax(13rem,1fr));gap:var(--gouttiere)}
+.jeton{border:1px solid var(--filet);padding:var(--e-4);display:flex;flex-direction:column;gap:var(--e-3)}
+.jeton__pave{height:4.5rem;width:100%;border:1px solid var(--filet)}
+.jeton__nom{font-family:var(--f-mono);font-size:var(--t-mono-s);letter-spacing:var(--a-mono);text-transform:uppercase;color:var(--craie)}
+.jeton__val{font-family:var(--f-mono);font-size:var(--t-mono-s);color:var(--craie-35)}
+.ds-rangee{display:flex;flex-wrap:wrap;gap:var(--e-4);align-items:center;padding-block:var(--e-5);border-bottom:1px solid var(--filet)}
+.ds-legende{font-family:var(--f-mono);font-size:var(--t-mono-s);letter-spacing:var(--a-mono);text-transform:uppercase;color:var(--craie-35);min-width:11rem}
+.ds-echelle > div{display:flex;align-items:baseline;gap:var(--e-5);padding-block:var(--e-4);border-bottom:1px solid var(--filet)}
+.ds-echelle .ds-legende{flex:0 0 11rem}
+.ds-barre{height:var(--h,1rem);background:var(--signal);opacity:.85}
